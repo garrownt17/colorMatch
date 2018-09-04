@@ -8,6 +8,11 @@ Goal: user selects cell, computer chooses cell, if they match, cell turns green.
 var box = document.getElementsByClassName("color-box");
 var newGame = true;
 
+//game stats
+var winGame = 0;
+var loseGame = 0;
+
+
 function colorGame () {
   document.getElementById("gameStartBtn").style.display = "none"; //remove start game button
 
@@ -41,15 +46,17 @@ function userChoose(cell) {
       box[userCell].style.backgroundColor = "green";
     computer.innerHTML = "The computer also chose cell " + (compCell + 1) + ".";
     results.innerHTML = "You Win!";
+    winGame++;
     } else {
       for(var i = 0; i < box.length; i++) {
       box[i].style.backgroundColor = "purple";
       }
       computer.innerHTML = "The computer chose cell " + (compCell + 1) + ".";
+      loseGame++;
       results.innerHTML = "No Match :(";
     }
     document.getElementById("resetBtn").style.display = "initial";
-
+    document.getElementById("gameResults").style.display = "initial";
     newGame = false;
   } else {
     user.innerHTML = "";
@@ -74,4 +81,10 @@ function resetGame()  {
   user.innerHTML = "";
   computer.innerHTML = "";
   results.innerHTML = "";
+}
+
+function gameResults() {
+  var totalGame = winGame + loseGame;
+  var winPercent = (winGame / totalGame) * 100;
+  alert("You have won " + winGame + " games and lost " + loseGame + ". Your sucess rate is " + winPercent.toFixed(2) + "%.");
 }
