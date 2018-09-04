@@ -3,20 +3,17 @@ main {
   margin: 0 auto;
 }
 
-table, th, td {
-    width: 70%;
+table, td {
     border: 1px solid black;
     margin: 0 auto;
 }
 
-td {
-  width: 10rem;
-  height: 10rem;
-}
-
 table {
   margin-top: 3rem;
+  width: 50vw;
+  height: 50vh
 }
+
 
 .color-button {
   width: 100%;
