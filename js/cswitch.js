@@ -22,18 +22,7 @@ function colorGame () {
   var results = document.getElementById("results");
 
   //get user selection
-  user.innerHTML = "Choose 1 box";
-
-/*  if(gameBtn != null) {
-    for(var i = 0; i < gameBtn.length; i++) {
-      gameBtn[i].addEventListener("click", function userChoose() {
-        userCell = i;
-        gameBtn[i].style.backgroundColor = "orange";
-        break;
-      });
-    }
-    setTimeout(userChoose(), 4000);
-  }*/
+  user.innerHTML = "Choose 1 box to begin";
 }
 
 function userChoose(cell) {
@@ -44,6 +33,7 @@ function userChoose(cell) {
 
     //make computer selection - works
     var compCell = compChoose();
+    document.getElementById("gameStartBtn").style.display = "none";
     console.log(compCell);
     //check for match
 
@@ -64,7 +54,7 @@ function userChoose(cell) {
   } else {
     user.innerHTML = "";
     computer.innerHTML = "";
-    results.innerHTML = "Please select Play Again? to reset the game.";
+    results.innerHTML = "Please select \"Play Again?\" to reset the game.";
   }
 }
 
@@ -74,7 +64,14 @@ function compChoose() {
   return compCell;
 }
 
-function resetForm()  {
-  var totalElem = document.getElementById('resetBtn');
-  totalElem.innerHTML = result;
+function resetGame()  {
+  newGame = true;
+  for(var i = 0; i < box.length; i++) {
+  box[i].style.backgroundColor = "red";
+  }
+  document.getElementById("gameStartBtn").style.display = "initial";
+  document.getElementById("resetBtn").style.display = "none";
+  user.innerHTML = "";
+  computer.innerHTML = "";
+  results.innerHTML = "";
 }
