@@ -1,3 +1,8 @@
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
 table, th, td {
     width: 70%;
     border: 1px solid black;
@@ -10,11 +15,7 @@ td {
 }
 
 table {
-  margin-bottom: 3rem;
-}
-
-button {
-  margin-left: 2rem;
+  margin-top: 3rem;
 }
 
 .color-button {
@@ -22,4 +23,12 @@ button {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-size: 4rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+#resetBtn {
+  margin-top: 1rem;
 }

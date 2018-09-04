@@ -1,32 +1,35 @@
 <!doctype html>
 <html>
   <head>
-    <title></title>
+    <title>Color Match | JS Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/style.css" rel="stylesheet" type="text/css">
-    <script src="./js/color.js"></script>
+    <script src="./js/cswitch.js"></script>
   </head>
   <body>
     <header>
-      <h1>Color Swap</h1>
-      <p>Click the button below to change the location of the blue square!</p>
+      <h1>Color Match</h1>
+      <p>Try to guess what cell the computer will choose! Hit "Start Game!" to begin. Good Luck!</p>
     </header>
     <main>
+      <button id="gameStartBtn" onclick="colorGame()">Start Game!</button>
+      <div id="user"></div>
+      <div id="computer"></div>
+      <div id="results"></div>
+      <button id="resetBtn" onclick="resetGame()" type="reset" style="display: none;">Play Again?</button>
       <table>
         <tbody>
           <tr>
-            <td class="color-box" style="background-color:blue;"><button class="color-button" onclick="switchColor(0)" style="background-color: transparent"></button></td>
-            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="switchColor(1)" style="background-color: transparent"></button></td>
-            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="switchColor(2)" style="background-color: transparent"></button></td>
+            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="userChoose(0)">1</button></td>
+            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="userChoose(1)">2</button></td>
           </tr>
           <tr>
-            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="switchColor(3)" style="background-color: transparent"></button></td>
-            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="switchColor(4)" style="background-color: transparent"></button></td>
-            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="switchColor(5)" style="background-color: transparent"></button></td>
+            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="userChoose(2)">3</button></td>
+            <td class="color-box" style="background-color:red;"><button class="color-button" onclick="userChoose(3)">4</button></td>
           </tr>
         </tbody>
       </table>
-      <button onclick="swapColor()">Swap Colors!</button>
+
     </main>
   </body>
 </html>
