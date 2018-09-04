@@ -76,6 +76,7 @@ function resetGame()  {
   document.getElementById("resetBtn").style.display = "none";
 
   message(game, "");
+  message(error, "");
 }
 
 function gameResults() {
